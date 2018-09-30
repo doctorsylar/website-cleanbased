@@ -1,0 +1,17 @@
+.preloader {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #eee;
+    z-index: 99999;
+}
+.tetris {
+    position: absolute;
+    background: url("../img/preloader.gif") no-repeat center center;
+    height: 128px;
+    width: 128px;
+    top: calc(50% - 64px);
+    left: calc(50% - 64px);
+}
