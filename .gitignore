@@ -62,3 +62,6 @@ package-lock.json
 
 #build
 /build/
+
+# font-awesome
+/font-awesome/

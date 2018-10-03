@@ -88,7 +88,9 @@ ul {
 header {
     padding: 10px;
     background-color: #ffffff;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1;
     font-family: 'Oswald', sans-serif;
 
 }
@@ -137,8 +139,10 @@ header .header-menu.horizontal-menu li a i {
 }
 header .header-menu.vertical-menu {
     position: absolute;
-    top: 47px;
+    background-color: #ffffff;
+    top: 58px;
     left: 0;
+    z-index: 2;
 }
 header .vertical-menu ul {
     flex-direction: column;
@@ -170,10 +174,54 @@ header .menu-toggler i[class~='spinning'].fa-bars {
     animation-direction: reverse;
 }
 /* MAIN */
+main {
+    background-color: #f0f0f0;
+}
 /* SERVICES */
-
-
-
+#services {
+    padding: 50px 0 100px;
+    margin: 0 auto;
+}
+#services h2 {
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+}
+#services .services-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+#services .services-container .services-item {
+    margin: 30px auto;
+    background-color: #ffffff;
+    max-width: 250px;
+    width: 80%;
+    min-width: 150px;
+    text-align: center;
+    padding: 15px;
+}
+#services .services-container .services-item .images {
+    font-size: 56px;
+}
+#services .services-container .services-frontend .images i {
+    color: dodgerblue;
+}
+#services .services-container .services-backend .images i {
+    color: darkviolet;
+}
+#services .services-container .services-fullstack .images i:first-child {
+    color: dodgerblue;
+}
+#services .services-container .services-fullstack .images i:last-child {
+    color: darkviolet;
+}
+#services .services-container .services-item .services-description {
+    text-align: justify;
+}
 
 /* MEDIA */
 @media (min-width: 576px) {
@@ -192,7 +240,9 @@ header .menu-toggler i[class~='spinning'].fa-bars {
     }
 }
 @media (min-width: 768px) {
-
+    #services .services-container {
+        flex-direction: row;
+    }
 }
 @media (min-width: 992px) {
     .home .heading h1 {
