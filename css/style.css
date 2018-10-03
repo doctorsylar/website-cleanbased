@@ -56,15 +56,15 @@ ul {
 .home .arrow-bottom {
     position: absolute;
     width: 100%;
-    bottom: 80px;
+    bottom: 60px;
     text-align: center;
 }
 .home a {
     border: 2px solid #ffffff;
     border-radius: 50%;
     transition: 0.3s linear background-color;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     display: inline-block;
 }
 .home a:hover {
@@ -89,6 +89,8 @@ header {
     padding: 10px;
     background-color: #ffffff;
     position: relative;
+    font-family: 'Oswald', sans-serif;
+
 }
 header .header-container {
     display: flex;
@@ -106,6 +108,7 @@ header .header-menu ul {
 }
 header .vertical-menu {
     width: 100%;
+    padding-left: 9px;
 }
 header .vertical-menu a {
     margin-left: -9px;
@@ -147,9 +150,28 @@ header .vertical-menu li {
 header .vertical-menu li i {
     margin-right: 10px;
 }
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 header .menu-toggler {
     font-size: 32px;
+    cursor: pointer;
+    transition: transform 0.5s;
 }
+header .menu-toggler i[class~='spinning'] {
+    animation: 0.25s spin forwards linear;
+}
+header .menu-toggler i[class~='spinning'].fa-bars {
+    animation-direction: reverse;
+}
+/* MAIN */
+/* SERVICES */
+
 
 
 

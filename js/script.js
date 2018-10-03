@@ -23,6 +23,14 @@ $(function () {
     });
     // Menu toggler
     $('.menu-toggler > i').click(function () {
+        let button = $('.menu-toggler > i');
         $('.vertical-menu').slideToggle();
+        button.addClass('spinning');
+        button.toggleClass('fa-times');
+        button.toggleClass('fa-bars');
+        console.log($('.menu-toggler > i'));
+        setTimeout(function () {
+            button.removeClass('spinning');
+        }, 500);
     });
 });
