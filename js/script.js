@@ -1,7 +1,14 @@
 // jQuery
 $(function () {
     let windowVar = $(window);
-    let screenHeight = windowVar.height();
+    let jsWindow = windowVar[0];
+    let windowHeight = windowVar[0].innerHeight;
+    let servicesPos = $('#services').offset().top;
+    let portfolioPos = $('#portfolio').offset().top;
+
+    windowVar.resize(function () {
+        windowHeight = windowVar[0].innerHeight;
+    });
 
     $('.preloader').fadeOut(100);
     // anchor links slow scroll
@@ -14,11 +21,24 @@ $(function () {
     // scroll events:
     // 1. Home background smooth scrolling
     windowVar.scroll(function (event) {
-        let jsWindow = windowVar[0];
-        let windowHeight = jsWindow.innerHeight;
         let scrollPos = jsWindow.scrollY;
         if (scrollPos < windowHeight) {
             $('#home').css('background-position-y', scrollPos / -5);
+        }
+    //  Menu items highlighting
+        let underHeaderScroll = scrollPos + 77;
+        // $('.header-menu ul li a').removeClass('active');
+        if (underHeaderScroll < servicesPos) {
+            $('.link-home').addClass('active');
+            $('.link-home').parent().siblings().children().removeClass('active');
+        }
+        else if (underHeaderScroll < portfolioPos) {
+            $('.link-services').addClass('active');
+            $('.link-services').parent().siblings().children().removeClass('active');
+        }
+        else {
+            $('.link-portfolio').addClass('active');
+            $('.link-portfolio').parent().siblings().children().removeClass('active');
         }
     });
     // Menu toggler

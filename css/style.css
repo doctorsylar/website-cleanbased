@@ -10,7 +10,7 @@ html, body {
     font-family: 'Raleway', sans-serif;
 }
 body {
-    min-height: 2000px;
+    min-height: 4000px;
 }
 a {
     text-decoration: none;
@@ -108,6 +108,9 @@ header .header-menu ul {
     list-style: none;
     display: flex;
 }
+header .header-menu ul li a[class~='active'] {
+    color: tomato;
+}
 header .vertical-menu {
     width: 100%;
     padding-left: 9px;
@@ -198,9 +201,9 @@ main {
 #services .services-container .services-item {
     margin: 30px auto;
     background-color: #ffffff;
-    max-width: 250px;
+    max-width: 300px;
     width: 80%;
-    min-width: 150px;
+    min-width: 200px;
     text-align: center;
     padding: 15px;
 }
