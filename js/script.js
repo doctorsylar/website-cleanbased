@@ -5,6 +5,7 @@ $(function () {
     let windowHeight = windowVar[0].innerHeight;
     let servicesPos = $('#services').offset().top;
     let portfolioPos = $('#portfolio').offset().top;
+    let prevScrollPos = 0;
 
     windowVar.resize(function () {
         windowHeight = windowVar[0].innerHeight;
@@ -25,20 +26,23 @@ $(function () {
         if (scrollPos < windowHeight) {
             $('#home').css('background-position-y', scrollPos / -5);
         }
-    //  Menu items highlighting
-        let underHeaderScroll = scrollPos + 77;
-        // $('.header-menu ul li a').removeClass('active');
-        if (underHeaderScroll < servicesPos) {
-            $('.link-home').addClass('active');
-            $('.link-home').parent().siblings().children().removeClass('active');
-        }
-        else if (underHeaderScroll < portfolioPos) {
-            $('.link-services').addClass('active');
-            $('.link-services').parent().siblings().children().removeClass('active');
-        }
-        else {
-            $('.link-portfolio').addClass('active');
-            $('.link-portfolio').parent().siblings().children().removeClass('active');
+        if (scrollPos > prevScrollPos + 50 || scrollPos < prevScrollPos - 50) {
+            prevScrollPos = scrollPos;
+            //  Menu items highlighting
+            let underHeaderScroll = scrollPos + 77;
+            // $('.header-menu ul li a').removeClass('active');
+            if (underHeaderScroll < servicesPos) {
+                $('.link-home').addClass('active');
+                $('.link-home').siblings().removeClass('active');
+            }
+            else if (underHeaderScroll < portfolioPos) {
+                $('.link-services').addClass('active');
+                $('.link-services').siblings().removeClass('active');
+            }
+            else {
+                $('.link-portfolio').addClass('active');
+                $('.link-portfolio').siblings().removeClass('active');
+            }
         }
     });
     // Menu toggler
@@ -52,5 +56,12 @@ $(function () {
         setTimeout(function () {
             button.removeClass('spinning');
         }, 500);
+    });
+
+    $('#trigger-overlay').click(function () {
+        $('.overlay').fadeIn(100);
+    });
+    $('.overlay').click(function () {
+        $('.overlay').fadeOut(0);
     });
 });
