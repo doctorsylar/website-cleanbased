@@ -235,6 +235,7 @@ main {
     display: grid;
     grid-template-columns: 100%;
     grid-gap: 30px 30px;
+    width: 100%;
 }
 /* FROM GRID */
 #portfolio .portfolio-container .portfolio-item {
@@ -274,8 +275,7 @@ main {
     pointer-events: none;
 }
 
-#portfolio .portfolio-container .portfolio-item figure figcaption,
-#portfolio .portfolio-container .portfolio-item figure figcaption > a {
+#portfolio .portfolio-container .portfolio-item figure figcaption {
     position: absolute;
     top: 0;
     left: 0;
@@ -285,21 +285,10 @@ main {
 
 /* Anchor will cover the whole item by default */
 /* For some effects it will show as a button */
-#portfolio .portfolio-container .portfolio-item figure figcaption > a {
-    z-index: 1000;
-    text-indent: 200%;
-    white-space: nowrap;
-    font-size: 0;
-    opacity: 0;
-}
 
 #portfolio .portfolio-container .portfolio-item figure h3 {
     word-spacing: -0.15em;
     font-weight: 300;
-}
-
-#portfolio .portfolio-container .portfolio-item figure h3 span {
-    font-weight: 800;
 }
 
 #portfolio .portfolio-container .portfolio-item figure h3,
@@ -308,7 +297,6 @@ main {
 }
 
 #portfolio .portfolio-container .portfolio-item figure p {
-    display: none;
     letter-spacing: 1px;
     font-size: 68.5%;
 }
@@ -417,9 +405,6 @@ main {
         text-align: center;
         width: 100%;
     }
-    #portfolio .portfolio-container {
-        grid-template-columns: auto auto;
-    }
     #portfolio .portfolio-container .portfolio-item figure p {
         display: block;
     }
@@ -429,7 +414,7 @@ main {
         flex-direction: row;
     }
     #portfolio .portfolio-container {
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto auto;
     }
 }
 @media (min-width: 992px) {
@@ -448,10 +433,16 @@ main {
     header .vertical-menu {
         display: none !important;
     }
+    #portfolio .portfolio-container {
+        grid-template-columns: auto auto auto;
+    }
 
 }
 @media (min-width: 1200px) {
-    /*#portfolio .portfolio-container {*/
-        /*grid-template-columns: auto auto auto auto;*/
-    /*}*/
+}
+@media (min-width: 1680px) {
+    #portfolio .portfolio-container {
+        grid-template-columns: auto auto auto auto;
+    }
+
 }
