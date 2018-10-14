@@ -5,6 +5,7 @@ $(function () {
     let windowHeight = windowVar[0].innerHeight;
     let servicesPos = $('#services').offset().top;
     let portfolioPos = $('#portfolio').offset().top;
+    let skillsPos = $('#skills').offset().top;
     let prevScrollPos = 0;
 
     windowVar.resize(function () {
@@ -39,9 +40,14 @@ $(function () {
                 $('.link-services').addClass('active');
                 $('.link-services').siblings().removeClass('active');
             }
-            else {
+            else if (underHeaderScroll < skillsPos) {
                 $('.link-portfolio').addClass('active');
                 $('.link-portfolio').siblings().removeClass('active');
+            }
+            else {
+
+                $('.link-skills').addClass('active');
+                $('.link-skills').siblings().removeClass('active');
             }
         }
     });
@@ -64,4 +70,21 @@ $(function () {
     $('.overlay').click(function () {
         $('.overlay').fadeOut(0);
     });
+
+//    Portfolio fullimages
+    $('.portfolio-item-inner').click(function () {
+        $('.overlay, .close-modal').show(0);
+        let clicked = $(this.children[1]);
+        clicked.fadeIn(300, () => {
+            setTimeout(() => {
+                $(this.children[1].children[1]).css('opacity', 0);
+            }, 500);
+        });
+    });
+    $('.overlay, .close-modal').click(function () {
+        $('.fullscreen-picture').removeClass('shown');
+        $('.fullscreen-picture').fadeOut(100);
+        $('.overlay, .close-modal').fadeOut(100);
+        $('.fullscreen-picture .picture-text').css('opacity', '');
+    })
 });
