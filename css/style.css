@@ -418,9 +418,49 @@ main {
 #skills {
     padding: 50px 0;
 }
-
-
-
+#skills .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+#skills .skill-item {
+    position: relative;
+    width: 100%;
+    margin: 15px;
+}
+#skills .skill-item img {
+    cursor: pointer;
+}
+#skills .skill-item .skill-description {
+    visibility: hidden;
+    width: 100%;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+#skills .skill-item .skill-description::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+#skills .skill-item:hover .skill-description{
+    visibility: visible;
+    opacity: 1;
+}
 
 /* OVERLAY */
 .overlay {
@@ -460,6 +500,9 @@ body > .close-modal {
         text-align: center;
         width: 100%;
     }
+    #skills .skill-item {
+        width: 40%;
+    }
 }
 @media (min-width: 768px) {
     #services .services-container {
@@ -467,6 +510,10 @@ body > .close-modal {
     }
     #portfolio .portfolio-container {
         grid-template-columns: auto auto;
+    }
+
+    #skills .skill-item {
+        width: 28%;
     }
 }
 @media (min-width: 992px) {
@@ -491,6 +538,9 @@ body > .close-modal {
 
 }
 @media (min-width: 1200px) {
+    #skills .skill-item {
+        width: 20%;
+    }
 }
 @media (min-width: 1680px) {
     #portfolio .portfolio-container {
