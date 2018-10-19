@@ -228,7 +228,7 @@ main {
 /* PORTFOLIO */
 #portfolio {
     background-color: #ffffff;
-    padding: 50px 0;
+    padding: 50px 1%;
 }
 #portfolio .portfolio-container {
     margin: 0 auto;
@@ -421,13 +421,13 @@ main {
 #skills .skills-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
     margin: 0 auto;
+    justify-content: center;
 }
 #skills .skill-item {
     position: relative;
     width: 100%;
-    margin: 15px;
+    margin-bottom: 30px;
 }
 #skills .skill-item img {
     cursor: pointer;
@@ -439,13 +439,13 @@ main {
     color: #fff;
     text-align: center;
     border-radius: 6px;
-    padding: 5px 0;
     position: absolute;
     z-index: 1;
-    top: 100%;
+    top: 102%;
     left: 0;
     opacity: 0;
     transition: opacity 0.3s;
+    padding: 0 10px;
 }
 #skills .skill-item .skill-description::after {
     content: "";
@@ -461,6 +461,31 @@ main {
     visibility: visible;
     opacity: 1;
 }
+
+
+/* ABOUT */
+#about {
+    background-color: #ffffff;
+    padding: 50px 0;
+}
+
+
+/* CONTACT */
+#contact {
+    padding: 50px 0;
+}
+
+
+/* FOOTER */
+footer {
+    height: 100px;
+    background-color: #333333;
+    color: #ffffff;
+}
+
+
+
+
 
 /* OVERLAY */
 .overlay {
@@ -500,8 +525,8 @@ body > .close-modal {
         text-align: center;
         width: 100%;
     }
-    #skills .skill-item {
-        width: 40%;
+    #skills .skills-container .skill-item {
+        width: 45%;
     }
 }
 @media (min-width: 768px) {
@@ -511,9 +536,8 @@ body > .close-modal {
     #portfolio .portfolio-container {
         grid-template-columns: auto auto;
     }
-
-    #skills .skill-item {
-        width: 28%;
+    #skills .skills-container .skill-item {
+        width: 30%;
     }
 }
 @media (min-width: 992px) {
@@ -535,16 +559,25 @@ body > .close-modal {
     #portfolio .portfolio-container {
         grid-template-columns: auto auto auto;
     }
+    #skills .skills-container .skill-item {
+        width: 21%;
+    }
 
 }
 @media (min-width: 1200px) {
-    #skills .skill-item {
-        width: 20%;
+    #skills .skills-container {
+        grid-template-columns: auto auto auto auto auto;
+    }
+    #skills .skills-container .skill-item {
+        width: 18%;
     }
 }
 @media (min-width: 1680px) {
     #portfolio .portfolio-container {
         grid-template-columns: auto auto auto auto;
+    }
+    #skills .skills-container .skill-item {
+        width: 16%;
     }
 
 }

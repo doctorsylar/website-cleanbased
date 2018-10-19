@@ -6,6 +6,8 @@ $(function () {
     let servicesPos = $('#services').offset().top;
     let portfolioPos = $('#portfolio').offset().top;
     let skillsPos = $('#skills').offset().top;
+    let aboutPos = $('#about').offset().top;
+    let contactPos = $('#contact').offset().top;
     let prevScrollPos = 0;
 
     windowVar.resize(function () {
@@ -44,10 +46,17 @@ $(function () {
                 $('.link-portfolio').addClass('active');
                 $('.link-portfolio').siblings().removeClass('active');
             }
-            else {
-
+            else if (underHeaderScroll < aboutPos) {
                 $('.link-skills').addClass('active');
                 $('.link-skills').siblings().removeClass('active');
+            }
+            else if (underHeaderScroll < contactPos)  {
+                $('.link-about').addClass('active');
+                $('.link-about').siblings().removeClass('active');
+            }
+            else {
+                $('.link-contact').addClass('active');
+                $('.link-contact').siblings().removeClass('active');
             }
         }
     });
