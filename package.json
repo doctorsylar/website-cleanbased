@@ -32,6 +32,7 @@
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/runtime": "^7.1.2",
+    "easy-pie-chart": "^2.1.7",
     "jquery": "^3.3.1"
   }
 }

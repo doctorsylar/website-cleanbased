@@ -445,7 +445,7 @@ main {
     left: 0;
     opacity: 0;
     transition: opacity 0.3s;
-    padding: 0 10px;
+    padding: 0 10px 20px;
 }
 #skills .skill-item .skill-description::after {
     content: "";
@@ -453,13 +453,37 @@ main {
     bottom: 100%;
     left: 50%;
     margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
+    border: 5px solid;
     border-color: transparent transparent #555 transparent;
 }
 #skills .skill-item:hover .skill-description{
     visibility: visible;
     opacity: 1;
+}
+/* easy pie chart */
+#skills .skill-item .skill-description .chart {
+    display: inline-block;
+    height: 140px;
+    position: relative;
+    text-align: center;
+    width: 140px;
+}
+#skills .skill-item .skill-description .chart canvas {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+#skills .skill-item .skill-description .percent {
+    display: inline-block;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 140px;
+    z-index: 2;
+}
+#skills .skill-item .skill-description .percent:after {
+    content: "%";
+    font-size: 50%;
+    margin-left: 0.1em;
 }
 
 

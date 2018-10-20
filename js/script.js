@@ -72,6 +72,15 @@ $(function () {
             button.removeClass('spinning');
         }, 500);
     });
+    // easy pie chart
+    $('.chart').easyPieChart({
+        size:140,
+        lineCap:'butt',
+        scaleColor: false,
+        barColor: '#FF5252',
+        trackColor: 'transparent',
+        lineWidth: 10
+    });
 
     $('#trigger-overlay').click(function () {
         $('.overlay').fadeIn(100);
