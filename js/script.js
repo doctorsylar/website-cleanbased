@@ -104,5 +104,18 @@ $(function () {
         $('.fullscreen-picture').fadeOut(100);
         $('.overlay, .close-modal').fadeOut(100);
         $('.fullscreen-picture .picture-text').css('opacity', '');
-    })
+    });
+//    JS fullscreen pictures code
+    function makeBackground() {
+        let divsArray = document.querySelectorAll('.fullscreen-picture');
+        for (let div of divsArray) {
+            let string = "url('" + div.children[0].getAttribute('src') + "') no-repeat top center";
+            div.style.background = string;
+            div.style.color = 'red';
+            console.log(div.children[0].getAttribute('src'));
+            console.log(string);
+            console.log(div.style.background);
+        }
+    }
+    makeBackground();
 });

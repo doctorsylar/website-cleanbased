@@ -236,6 +236,7 @@ main {
     grid-template-columns: 100%;
     grid-gap: 30px 30px;
     width: 100%;
+    padding: 0 30px;
 }
 /* FROM GRID */
 #portfolio .portfolio-item {
@@ -381,9 +382,11 @@ main {
     right: 30px;
     width: calc(100% - 60px);
     z-index: 99;
+    background-size: cover !important;
 }
 #portfolio .portfolio-item .fullscreen-picture img {
     width: 100%;
+    opacity: 0;
 }
 
 @keyframes fadeText {
@@ -397,16 +400,17 @@ main {
 }
 
 #portfolio .portfolio-item .fullscreen-picture .picture-text {
-    position: fixed;
-    top: 30px;
-    right: 30px;
-    bottom: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
     transition: opacity 0.8s;
     background-color: #000;
     color: #fff;
-    width: 30%;
+    width: 70%;
     height: 100%;
     padding: 15px;
+    overflow: auto;
 }
 #portfolio .portfolio-item .fullscreen-picture .picture-text:hover {
     opacity: 1 !important;
@@ -434,7 +438,7 @@ main {
 }
 #skills .skill-item .skill-description {
     visibility: hidden;
-    width: 100%;
+    width: 140%;
     background-color: #555;
     color: #fff;
     text-align: center;
@@ -442,7 +446,7 @@ main {
     position: absolute;
     z-index: 1;
     top: 102%;
-    left: 0;
+    left: -20%;
     opacity: 0;
     transition: opacity 0.3s;
     padding: 0 10px 20px;
@@ -565,6 +569,12 @@ body > .close-modal {
         text-align: center;
         width: 100%;
     }
+    #portfolio .portfolio-container {
+        grid-template-columns: auto auto;
+    }
+    #portfolio .portfolio-item .fullscreen-picture .picture-text {
+        width: 50%;
+    }
     #skills .skills-container .skill-item {
         width: 45%;
     }
@@ -575,9 +585,6 @@ body > .close-modal {
 @media (min-width: 768px) {
     #services .services-container {
         flex-direction: row;
-    }
-    #portfolio .portfolio-container {
-        grid-template-columns: auto auto;
     }
     #skills .skills-container .skill-item {
         width: 30%;
@@ -601,6 +608,9 @@ body > .close-modal {
     }
     #portfolio .portfolio-container {
         grid-template-columns: auto auto auto;
+    }
+    #portfolio .portfolio-item .fullscreen-picture .picture-text {
+        width: 30%;
     }
     #skills .skills-container .skill-item {
         width: 21%;
