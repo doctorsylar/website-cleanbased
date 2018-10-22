@@ -434,6 +434,23 @@
     <section id="contact">
         <h2>Контакты</h2>
         <div class="underline"></div>
+        <form action="./php/send-email.php" class="contact-form">
+            <p class="contact-description">
+                Пожалуйста, оставьте свои контактные данные и сообщение, чтобы я мог с Вами как можно скорее связаться.
+            </p>
+            <div class="name">
+                <input type="text" placeholder="Ваше имя..." required>
+            </div>
+            <div class="email">
+                <input type="text" placeholder="Ваш email..." required>
+            </div>
+            <div class="message">
+                <textarea rows="10" placeholder="Ваше сообщение..." required></textarea>
+            </div>
+            <div class="submit">
+                <input type="submit" class="submit" value="Отправить">
+            </div>
+        </form>
 
     </section>
 </main>
