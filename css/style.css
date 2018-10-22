@@ -50,6 +50,7 @@ h2 {
     text-align: center;
     transform: translateY(-50%);
     width: 100%;
+    padding: 0 10px;
 }
 .home .heading p {
     font-size: 14px;
@@ -553,6 +554,12 @@ body > .close-modal {
     color: #aaaaaa;
     display: none;
 }
+.underline {
+    background: rgba(135, 135, 135, 0.5);
+    width: 100px;
+    height: 1px;
+    margin: 30px auto;
+}
 
 /* MEDIA */
 @media (min-width: 576px) {
@@ -589,6 +596,18 @@ body > .close-modal {
     #skills .skills-container .skill-item {
         width: 30%;
     }
+    #about .info .photo-area {
+        width: 50%;
+    }
+    #about .info .text-area {
+        width: 40%;
+    }
+    #about .info .photo-area {
+        text-align: right;
+    }
+    #about .info img {
+        margin-right: 10%;
+    }
 }
 @media (min-width: 992px) {
     .home .heading h1 {
@@ -623,6 +642,9 @@ body > .close-modal {
     }
     #skills .skills-container .skill-item {
         width: 18%;
+    }
+    #about .info .text-area {
+        width: 30%;
     }
 }
 @media (min-width: 1680px) {
