@@ -10,6 +10,8 @@ $(function () {
     let contactPos = $('#contact').offset().top;
     let prevScrollPos = 0;
 
+    fillSkills();
+
     windowVar.resize(function () {
         windowHeight = windowVar[0].innerHeight;
     });
@@ -105,6 +107,8 @@ $(function () {
         $('.overlay, .close-modal').fadeOut(100);
         $('.fullscreen-picture .picture-text').css('opacity', '');
     });
+
+
 //    JS fullscreen pictures code
     function makeBackground() {
         let divsArray = document.querySelectorAll('.fullscreen-picture');
@@ -118,4 +122,81 @@ $(function () {
         }
     }
     makeBackground();
+    function fillSkills() {
+        let skillsList = [
+            { name: 'HTML 5',
+                pictureUrl: 'https://www.w3.org/html/logo/downloads/HTML5_Badge.svg',
+                level: ['90'],
+                description: 'HTML 5 desc'
+            },
+            { name: 'CSS 3',
+                pictureUrl: './img/css-logo.svg',
+                level: ['85'],
+                description: 'CSS 3 desc'
+            },
+            { name: 'JavaScript ES6',
+                pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg',
+                level: ['90'],
+                description: 'JavaScript ES6 desc'
+            },
+            { name: 'jQuery',
+                pictureUrl: './img/jquery.svg',
+                level: ['80'],
+                description: 'jQuery desc'
+            },
+            { name: 'Bootstrap 4',
+                pictureUrl: './img/bootstrap.svg',
+                level: ['70'],
+                description: 'Bootstrap 4 desc'
+            },
+            { name: 'React',
+                pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
+                level: ['65'],
+                description: 'React desc'
+            },
+            { name: 'VueJS',
+                pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Vue.js_Logo.svg',
+                level: ['50'],
+                description: 'VueJS desc'
+            },
+            { name: 'PHP7',
+                pictureUrl: './img/php.svg',
+                level: ['60'],
+                description: 'PHP7 desc'
+            },
+            { name: 'NodeJS',
+                pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg',
+                level: ['60'],
+                description: 'NodeJS desc'
+            },
+            { name: 'Webpack',
+                pictureUrl: './img/webpack.svg',
+                level: ['75'],
+                description: 'Webpack desc'
+            },
+            { name: 'Babel',
+                pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/02/Babel_Logo.svg',
+                level: ['90'],
+                description: 'Babel desc'
+            },
+        ];
+        let skillsContainer = $('.skills-container');
+        for (let skill of skillsList) {
+            let code = `
+            <div class="skill-item">
+                <img src="${skill.pictureUrl}" alt="${skill.name}">
+                <div class="skill-description">
+                    <h3>${skill.name}</h3>
+                    <p>${skill.description}</p>
+                    <div class="skill-level">
+                        <span data-percent="${skill.level}" class="chart easyPieChart" style="width: 140px; height: 140px; line-height: 140px;">
+                            <span class="percent">${skill.level}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            `;
+            skillsContainer.append(code);
+        }
+    }
 });

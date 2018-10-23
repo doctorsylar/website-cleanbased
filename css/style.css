@@ -237,7 +237,7 @@ main {
     grid-template-columns: 100%;
     grid-gap: 30px 30px;
     width: 100%;
-    padding: 0 30px;
+    padding: 0 10px;
 }
 /* FROM GRID */
 #portfolio .portfolio-item {
@@ -299,7 +299,6 @@ main {
     letter-spacing: 1px;
     font-size: 50%;
 }
-
 /* BUBBA */
 #portfolio .portfolio-item figure.bubba-effect {
     background: #ffffffaa;
@@ -432,10 +431,14 @@ main {
 #skills .skill-item {
     position: relative;
     width: 100%;
-    margin-bottom: 30px;
+    margin: 30px;
+    max-width: 200px;
+    max-height: 200px;
 }
 #skills .skill-item img {
     cursor: pointer;
+    width: 100%;
+    height: 100%;
 }
 #skills .skill-item .skill-description {
     visibility: hidden;
@@ -491,7 +494,6 @@ main {
     margin-left: 0.1em;
 }
 
-
 /* ABOUT */
 #about {
     background-color: #ffffff;
@@ -513,7 +515,6 @@ main {
 #about .text-area {
     padding: 0 30px;
 }
-
 
 /* CONTACT */
 #contact {
@@ -554,6 +555,7 @@ main {
     color: #ffffff;
     margin: auto;
     font-size: 26px;
+    cursor: pointer;
 }
 #contact .contact-form input.submit:hover {
     background-color: #f0f0f0;
@@ -562,9 +564,45 @@ main {
 
     /* FOOTER */
 footer {
-    height: 100px;
     background-color: #333333;
     color: #ffffff;
+    padding: 15px 0;
+}
+footer .socials {
+    justify-content: center;
+    padding: 0 10px 10px;
+    list-style: none;
+    display: flex;
+
+}
+footer .socials i {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    padding: 5px;
+    margin-right: 5px;
+    color: #ffffff;
+    opacity: 0.3;
+    font-size: 20px;
+    transition: 0.4s;
+    text-align: center;
+}
+footer .socials i:hover {
+    opacity: 1;
+}
+footer .copyright {
+    text-align: center;
+}
+footer .copyright a {
+    border-bottom: 1px dotted #ff641e;
+    color: #ff641e;
+    transition: 0.4s all;
+}
+footer .copyright a:hover {
+    color: #ffffff;
+    border-bottom: none;
 }
 
 
@@ -680,9 +718,6 @@ body > .close-modal {
 
 }
 @media (min-width: 1200px) {
-    #skills .skills-container {
-        grid-template-columns: auto auto auto auto auto;
-    }
     #skills .skills-container .skill-item {
         width: 18%;
     }
