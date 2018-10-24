@@ -69,7 +69,7 @@ $(function () {
         button.addClass('spinning');
         button.toggleClass('fa-times');
         button.toggleClass('fa-bars');
-        console.log($('.menu-toggler > i'));
+        // console.log($('.menu-toggler > i'));
         setTimeout(function () {
             button.removeClass('spinning');
         }, 500);
@@ -108,6 +108,32 @@ $(function () {
         $('.fullscreen-picture .picture-text').css('opacity', '');
     });
 
+    $('.contact-form').submit(function (event) {
+        event.preventDefault();
+        let name = event.target[0].value.trim();
+        let email = event.target[1].value.trim();
+        let message = event.target[2].value.trim();
+        // console.log(event.target.action);
+        if (name !== '' && email !== '' && message !== '') {
+            $.ajax(event.target.action, {
+                data: {
+                    name: event.target[0].value,
+                    email: event.target[1].value,
+                    message: event.target[2].value
+                },
+                success: function () {
+                    $('.contact-form').fadeOut(1000, function () {
+                        $('.success-form-sending').slideDown(300);
+                    });
+
+                }
+            });
+        }
+        else {
+            $('.contact-form').submit();
+        }
+    });
+
 
 //    JS fullscreen pictures code
     function makeBackground() {
@@ -116,57 +142,59 @@ $(function () {
             let string = "url('" + div.children[0].getAttribute('src') + "') no-repeat top center";
             div.style.background = string;
             div.style.color = 'red';
-            console.log(div.children[0].getAttribute('src'));
-            console.log(string);
-            console.log(div.style.background);
+            // console.log(div.children[0].getAttribute('src'));
+            // console.log(string);
+            // console.log(div.style.background);
         }
     }
     makeBackground();
+
+    // script for filling skills section
     function fillSkills() {
         let skillsList = [
             { name: 'HTML 5',
                 pictureUrl: 'https://www.w3.org/html/logo/downloads/HTML5_Badge.svg',
-                level: ['90'],
+                level: ['95'],
                 description: 'HTML 5 desc'
             },
             { name: 'CSS 3',
                 pictureUrl: './img/css-logo.svg',
-                level: ['85'],
+                level: ['90'],
                 description: 'CSS 3 desc'
             },
             { name: 'JavaScript ES6',
                 pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg',
-                level: ['90'],
+                level: ['95'],
                 description: 'JavaScript ES6 desc'
             },
             { name: 'jQuery',
                 pictureUrl: './img/jquery.svg',
-                level: ['80'],
+                level: ['85'],
                 description: 'jQuery desc'
             },
             { name: 'Bootstrap 4',
                 pictureUrl: './img/bootstrap.svg',
-                level: ['70'],
+                level: ['80'],
                 description: 'Bootstrap 4 desc'
             },
             { name: 'React',
                 pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
-                level: ['65'],
+                level: ['75'],
                 description: 'React desc'
             },
             { name: 'VueJS',
                 pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Vue.js_Logo.svg',
-                level: ['50'],
+                level: ['60'],
                 description: 'VueJS desc'
             },
             { name: 'PHP7',
                 pictureUrl: './img/php.svg',
-                level: ['60'],
+                level: ['70'],
                 description: 'PHP7 desc'
             },
             { name: 'NodeJS',
                 pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg',
-                level: ['60'],
+                level: ['80'],
                 description: 'NodeJS desc'
             },
             { name: 'Webpack',

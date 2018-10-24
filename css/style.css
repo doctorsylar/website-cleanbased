@@ -561,6 +561,11 @@ main {
     background-color: #f0f0f0;
     color: #111111;
 }
+#contact .success-form-sending {
+    display: none;
+    color: forestgreen;
+    text-align: center;
+}
 
     /* FOOTER */
 footer {
