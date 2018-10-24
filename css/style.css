@@ -229,19 +229,21 @@ main {
 /* PORTFOLIO */
 #portfolio {
     background-color: #ffffff;
-    padding: 50px 1%;
+    padding: 50px 1% 100px;
 }
 #portfolio .portfolio-container {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 100%;
-    grid-gap: 30px 30px;
+    justify-content: space-evenly;
+    justify-items: center;
     width: 100%;
     padding: 0 10px;
 }
 /* FROM GRID */
 #portfolio .portfolio-item {
     position: relative;
+    max-width: 350px;
 }
 
 #portfolio .portfolio-item h3{
@@ -420,7 +422,7 @@ main {
 }
 /* SKILLS */
 #skills {
-    padding: 50px 0;
+    padding: 50px 0 100px;
 }
 #skills .skills-container {
     display: flex;
@@ -497,7 +499,7 @@ main {
 /* ABOUT */
 #about {
     background-color: #ffffff;
-    padding: 50px 1%;
+    padding: 50px 1% 100px;
 }
 #about .info {
     display: flex;
@@ -518,7 +520,8 @@ main {
 
 /* CONTACT */
 #contact {
-    padding: 50px 0;
+    padding: 50px 0 100px;
+    min-height: 700px;
 }
 #contact .contact-form {
     padding: 0 30px;

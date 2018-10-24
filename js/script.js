@@ -1,5 +1,7 @@
 // jQuery
 $(function () {
+    fillSkills();
+
     let windowVar = $(window);
     let jsWindow = windowVar[0];
     let windowHeight = windowVar[0].innerHeight;
@@ -10,7 +12,14 @@ $(function () {
     let contactPos = $('#contact').offset().top;
     let prevScrollPos = 0;
 
-    fillSkills();
+    windowVar.one('scroll', function () {
+        windowHeight = windowVar[0].innerHeight;
+        servicesPos = $('#services').offset().top;
+        portfolioPos = $('#portfolio').offset().top;
+        skillsPos = $('#skills').offset().top;
+        aboutPos = $('#about').offset().top;
+        contactPos = $('#contact').offset().top;
+    });
 
     windowVar.resize(function () {
         windowHeight = windowVar[0].innerHeight;
@@ -84,9 +93,6 @@ $(function () {
         lineWidth: 10
     });
 
-    $('#trigger-overlay').click(function () {
-        $('.overlay').fadeIn(100);
-    });
     $('.overlay').click(function () {
         $('.overlay').fadeOut(0);
     });
@@ -100,12 +106,14 @@ $(function () {
                 $(this.children[1].children[1]).css('opacity', 0);
             }, 500);
         });
+        $('body').css('overflow', 'hidden');
     });
     $('.overlay, .close-modal').click(function () {
         $('.fullscreen-picture').removeClass('shown');
         $('.fullscreen-picture').fadeOut(100);
         $('.overlay, .close-modal').fadeOut(100);
         $('.fullscreen-picture .picture-text').css('opacity', '');
+        $('body').css('overflow', 'auto');
     });
 
     $('.contact-form').submit(function (event) {
@@ -150,7 +158,7 @@ $(function () {
     makeBackground();
 
     // script for filling skills section
-    function fillSkills() {
+    function fillSkills(callback) {
         let skillsList = [
             { name: 'HTML 5',
                 pictureUrl: 'https://www.w3.org/html/logo/downloads/HTML5_Badge.svg',
