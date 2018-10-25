@@ -109,6 +109,12 @@ header .header-container {
     align-items: center;
     padding: 0;
 }
+header .header-logo svg g path {
+    transition: 0.5s all;
+}
+header .header-logo:hover svg g path {
+    fill: #541863 !important;
+}
 header .header-menu {
     display: none;
 }
@@ -143,7 +149,7 @@ header .header-menu.horizontal-menu li a {
     transition: color 0.3s linear;
 }
 header .header-menu.horizontal-menu li a:hover {
-    color: tomato;
+    color: #7c188b;
 }
 header .header-menu.horizontal-menu li a i {
     margin-right: 3px;
@@ -235,6 +241,7 @@ main {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 100%;
+    grid-row-gap: 40px;
     justify-content: space-evenly;
     justify-items: center;
     width: 100%;
@@ -384,7 +391,8 @@ main {
     right: 30px;
     width: calc(100% - 60px);
     z-index: 99;
-    background-size: cover !important;
+    background-size: contain !important;
+    overflow: auto;
 }
 #portfolio .portfolio-item .fullscreen-picture img {
     width: 100%;
@@ -402,17 +410,18 @@ main {
 }
 
 #portfolio .portfolio-item .fullscreen-picture .picture-text {
-    position: absolute;
+    /*position: absolute;*/
     top: 0;
     right: 0;
     bottom: 0;
     transition: opacity 0.8s;
     background-color: #000;
     color: #fff;
-    width: 70%;
+    width: 100%;
     height: 100%;
     padding: 15px;
     overflow: auto;
+    /*opacity: 1 !important*/
 }
 #portfolio .portfolio-item .fullscreen-picture .picture-text:hover {
     opacity: 1 !important;
@@ -508,6 +517,9 @@ main {
 }
 #about .photo-area {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 #about .photo-area img {
     border-radius: 50%;
@@ -516,6 +528,12 @@ main {
 }
 #about .text-area {
     padding: 0 30px;
+}
+#about .text-area .about-list {
+    list-style: circle;
+}
+#about .text-area .about-list .about-list-item {
+    margin-bottom: 5px;
 }
 
 /* CONTACT */
@@ -664,9 +682,6 @@ body > .close-modal {
     #portfolio .portfolio-container {
         grid-template-columns: auto auto;
     }
-    #portfolio .portfolio-item .fullscreen-picture .picture-text {
-        width: 50%;
-    }
     #skills .skills-container .skill-item {
         width: 45%;
     }
@@ -717,8 +732,24 @@ body > .close-modal {
     #portfolio .portfolio-container {
         grid-template-columns: auto auto auto;
     }
+    #portfolio .portfolio-item .fullscreen-picture {
+        background-size: cover !important;
+        overflow: hidden;
+    }
     #portfolio .portfolio-item .fullscreen-picture .picture-text {
-        width: 30%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        transition: opacity 0.8s;
+        height: 100%;
+        /*padding: 15px;*/
+        overflow: auto;
+
+        width: 40%;
+    }
+    #portfolio .portfolio-item .fullscreen-picture .picture-text:hover {
+        opacity: 1 !important;
     }
     #skills .skills-container .skill-item {
         width: 21%;

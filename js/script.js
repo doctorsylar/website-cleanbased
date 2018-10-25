@@ -13,7 +13,7 @@ $(function () {
     let prevScrollPos = 0;
 
     windowVar.one('scroll', function () {
-        windowHeight = windowVar[0].innerHeight;
+        windowHeight = jsWindow.innerHeight;
         servicesPos = $('#services').offset().top;
         portfolioPos = $('#portfolio').offset().top;
         skillsPos = $('#skills').offset().top;
@@ -37,7 +37,7 @@ $(function () {
     // 1. Home background smooth scrolling
     windowVar.scroll(function (event) {
         let scrollPos = jsWindow.scrollY;
-        if (scrollPos < windowHeight) {
+        if (scrollPos < windowHeight && jsWindow.innerWidth > 360) {
             $('#home').css('background-position-y', scrollPos / -5);
         }
         if (scrollPos > prevScrollPos + 50 || scrollPos < prevScrollPos - 50) {
@@ -102,9 +102,11 @@ $(function () {
         $('.overlay, .close-modal').show(0);
         let clicked = $(this.children[1]);
         clicked.fadeIn(300, () => {
-            setTimeout(() => {
-                $(this.children[1].children[1]).css('opacity', 0);
-            }, 500);
+            if ($('body').width() >= 992) {
+                setTimeout(() => {
+                    $(this.children[1].children[1]).css('opacity', 0);
+                }, 500);
+            }
         });
         $('body').css('overflow', 'hidden');
     });
@@ -214,6 +216,11 @@ $(function () {
                 pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/02/Babel_Logo.svg',
                 level: ['90'],
                 description: 'Babel desc'
+            },
+            { name: 'Wordpress',
+                pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Wordpress-Logo.svg',
+                level: ['60'],
+                description: 'Wordpress desc'
             },
         ];
         let skillsContainer = $('.skills-container');
