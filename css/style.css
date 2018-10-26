@@ -487,6 +487,12 @@ main {
     text-align: center;
     width: 140px;
 }
+#skills .skill-item .skill-description .underlined {
+    border-bottom: 1px dotted #ffffff;
+}
+#skills .skill-item .skill-description .skill-level {
+    margin-top: 10px;
+}
 #skills .skill-item .skill-description .chart canvas {
     left: 0;
     position: absolute;
@@ -733,6 +739,13 @@ body > .close-modal {
         grid-template-columns: auto auto auto;
     }
     #portfolio .portfolio-item .fullscreen-picture {
+        display: none;
+        position: fixed;
+        top: 50px;
+        left: 50px;
+        bottom: 50px;
+        right: 50px;
+        width: calc(100% - 100px);
         background-size: cover !important;
         overflow: hidden;
     }
@@ -754,7 +767,10 @@ body > .close-modal {
     #skills .skills-container .skill-item {
         width: 21%;
     }
-
+    body > .close-modal {
+        top: 50px;
+        right: 55px;
+    }
 }
 @media (min-width: 1200px) {
     #skills .skills-container .skill-item {

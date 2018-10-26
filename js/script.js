@@ -231,6 +231,7 @@ $(function () {
                 <div class="skill-description">
                     <h3>${skill.name}</h3>
                     <p>${skill.description}</p>
+                    <span class="underlined">Уровень владения:</span>
                     <div class="skill-level">
                         <span data-percent="${skill.level}" class="chart easyPieChart" style="width: 140px; height: 140px; line-height: 140px;">
                             <span class="percent">${skill.level}</span>
