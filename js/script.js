@@ -23,6 +23,11 @@ $(function () {
 
     windowVar.resize(function () {
         windowHeight = windowVar[0].innerHeight;
+        servicesPos = $('#services').offset().top;
+        portfolioPos = $('#portfolio').offset().top;
+        skillsPos = $('#skills').offset().top;
+        aboutPos = $('#about').offset().top;
+        contactPos = $('#contact').offset().top;
     });
 
     $('.preloader').fadeOut(100);
@@ -70,6 +75,43 @@ $(function () {
                 $('.link-contact').siblings().removeClass('active');
             }
         }
+        let animatedArray = $('.animatedIn');
+        if (animatedArray.length > 0) {
+            for (let i = 0; i < animatedArray.length; i++) {
+                let animatedItem = $(animatedArray[i]);
+                if (animatedItem.offset().top < scrollPos + windowHeight - 100) {
+                    if (animatedItem.hasClass('toFadeInLeft')) {
+                        animatedItem.addClass('fadeInLeft');
+                        animatedItem.removeClass('toFadeInLeft');
+                        setTimeout(function () {
+                            animatedItem.removeClass('fadeInLeft');
+                            animatedItem.css('opacity', '1');
+                        }, 1000);
+                    }
+                    else if (animatedItem.hasClass('toFadeInRight')) {
+                        animatedItem.addClass('fadeInRight');
+                        animatedItem.removeClass('toFadeInRight');
+                        setTimeout(function () {
+                            animatedItem.removeClass('fadeInRight');
+                            animatedItem.css('opacity', '1');
+                        }, 1000);
+                    }
+                    else {
+                        animatedItem.addClass('fadeInBottom');
+                        animatedItem.removeClass('toFadeInBottom');
+                        setTimeout(function () {
+                            animatedItem.removeClass('fadeInBottom');
+                            animatedItem.css('opacity', '1');
+                        }, 1000);
+                    }
+                    animatedItem.removeClass('animatedIn');
+                }
+                else {
+                    break;
+                }
+            }
+        }
+
     });
     // Menu toggler
     $('.menu-toggler > i').click(function () {
@@ -112,7 +154,7 @@ $(function () {
     });
     $('.overlay, .close-modal').click(function () {
         $('.fullscreen-picture').removeClass('shown');
-        $('.fullscreen-picture').fadeOut(100);
+        $('.fullscreen-picture').fadeOut(50);
         $('.overlay, .close-modal').fadeOut(100);
         $('.fullscreen-picture .picture-text').css('opacity', '');
         $('body').css('overflow', 'auto');
@@ -152,9 +194,6 @@ $(function () {
             let string = "url('" + div.children[0].getAttribute('src') + "') no-repeat top center";
             div.style.background = string;
             div.style.color = 'red';
-            // console.log(div.children[0].getAttribute('src'));
-            // console.log(string);
-            // console.log(div.style.background);
         }
     }
     makeBackground();
@@ -226,7 +265,7 @@ $(function () {
         let skillsContainer = $('.skills-container');
         for (let skill of skillsList) {
             let code = `
-            <div class="skill-item">
+            <div class="skill-item animatedIn">
                 <img src="${skill.pictureUrl}" alt="${skill.name}">
                 <div class="skill-description">
                     <h3>${skill.name}</h3>
