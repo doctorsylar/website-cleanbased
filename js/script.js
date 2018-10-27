@@ -185,6 +185,13 @@ $(function () {
             $('.contact-form').submit();
         }
     });
+    $(document).keydown(function(event) {
+        if( event.keyCode === 27 ) {
+            if ($('.overlay').css('display') !== 'none') {
+                $('.overlay').click();
+            }
+        }
+    });
 
 
 //    JS fullscreen pictures code

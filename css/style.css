@@ -458,7 +458,6 @@ main {
 }
 
 #portfolio .portfolio-item .fullscreen-picture .picture-text {
-    /*position: absolute;*/
     top: 0;
     right: 0;
     bottom: 0;
@@ -469,7 +468,9 @@ main {
     height: 100%;
     padding: 15px;
     overflow: auto;
-    /*opacity: 1 !important*/
+}
+#portfolio .portfolio-item .fullscreen-picture .picture-text h4 {
+    color: #ccf0ff;
 }
 #portfolio .portfolio-item .fullscreen-picture .picture-text:hover {
     opacity: 1 !important;
