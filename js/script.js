@@ -211,62 +211,62 @@ $(function () {
             { name: 'HTML 5',
                 pictureUrl: 'https://www.w3.org/html/logo/downloads/HTML5_Badge.svg',
                 level: ['95'],
-                description: 'HTML 5 desc'
+                description: 'Стандартизированный язык разметки документов в интернете'
             },
             { name: 'CSS 3',
                 pictureUrl: './img/css-logo.svg',
                 level: ['90'],
-                description: 'CSS 3 desc'
+                description: 'Язык описания внешнего вида документа'
             },
             { name: 'JavaScript ES6',
                 pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg',
                 level: ['95'],
-                description: 'JavaScript ES6 desc'
+                description: 'Язык программирования высокого уровня, использующийся для придания интерактивности веб-страницам'
             },
             { name: 'jQuery',
                 pictureUrl: './img/jquery.svg',
                 level: ['85'],
-                description: 'jQuery desc'
+                description: 'Библиотека JavaScript, делающая взаимодействие с визуальными составляющими страницы более удобным'
             },
             { name: 'Bootstrap 4',
                 pictureUrl: './img/bootstrap.svg',
                 level: ['80'],
-                description: 'Bootstrap 4 desc'
+                description: 'Библиотека, содержащая значительное количество готовых решений как для визуального оформления элементов веб-страницы, так и для создания интерактивности'
             },
             { name: 'React',
                 pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
                 level: ['75'],
-                description: 'React desc'
+                description: 'JavaScript-библиотека с открытым исходным кодом для разработки пользовательских интерфейсов'
             },
             { name: 'VueJS',
                 pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Vue.js_Logo.svg',
                 level: ['60'],
-                description: 'VueJS desc'
+                description: 'JavaScript-фреймворк с открытым исходным кодом для создания пользовательских интерфейсов'
             },
             { name: 'PHP7',
                 pictureUrl: './img/php.svg',
                 level: ['70'],
-                description: 'PHP7 desc'
+                description: 'Наиболее часто применяемый язык программирования для разработки серверной части веб-сайтов и веб-приложений'
             },
             { name: 'NodeJS',
                 pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg',
                 level: ['80'],
-                description: 'NodeJS desc'
+                description: 'Программная платформа, позволяющая использовать JavaScript как язык общего назначения вне окна браузера'
             },
             { name: 'Webpack',
                 pictureUrl: './img/webpack.svg',
                 level: ['75'],
-                description: 'Webpack desc'
+                description: 'Наиболее мощный инструмент для проведения \"сборки\" frontend\'а веб-сайтов'
             },
             { name: 'Babel',
                 pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/02/Babel_Logo.svg',
                 level: ['90'],
-                description: 'Babel desc'
+                description: 'Компилятор JavaScript с открытым исходным кодом и настраиваемый транспилятор, используемый в веб-разработке'
             },
             { name: 'Wordpress',
                 pictureUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Wordpress-Logo.svg',
                 level: ['60'],
-                description: 'Wordpress desc'
+                description: 'Самая популярная система управления контентом для веб-сайтов'
             },
         ];
         let skillsContainer = $('.skills-container');
