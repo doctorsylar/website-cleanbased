@@ -30,7 +30,6 @@ $(function () {
         contactPos = $('#contact').offset().top;
     });
 
-    $('.preloader').fadeOut(100);
     // anchor links slow scroll
     $('.anchor').click(function (event) {
         event.preventDefault();
@@ -289,4 +288,6 @@ $(function () {
             skillsContainer.append(code);
         }
     }
+    // preloader hiding
+    $('.preloader').fadeOut(100);
 });
