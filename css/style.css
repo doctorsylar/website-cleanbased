@@ -478,6 +478,16 @@ main {
 #portfolio .portfolio-item .fullscreen-picture .picture-text p {
     padding-left: 15px;
 }
+#portfolio .portfolio-item .fullscreen-picture .picture-text a {
+    color: #ff641e;
+    transition: all 0.5s linear;
+    border-bottom: 1px dashed #aaaaaa;
+    margin: 15px;
+}
+#portfolio .portfolio-item .fullscreen-picture .picture-text a:hover {
+    color: #ffffff;
+    border-bottom: none;
+}
 /* SKILLS */
 #skills {
     padding: 50px 0 100px;
