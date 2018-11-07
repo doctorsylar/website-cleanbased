@@ -9,9 +9,6 @@ html, body {
     background-color: #fff;
     font-family: 'Raleway', sans-serif;
 }
-body {
-    /*min-height: 4000px;*/
-}
 a {
     text-decoration: none;
     color: inherit;
@@ -276,7 +273,6 @@ main {
     color: darkviolet;
 }
 #services .services-container .services-item .services-description {
-    text-align: justify;
     line-height: 1.4em;
 }
 /* PORTFOLIO */
